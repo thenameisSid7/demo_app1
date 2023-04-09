@@ -21,7 +21,7 @@ class SocialSignInButton extends CustomRaisedButton {
               Opacity(
                 opacity: 0.0,
                 child: Image.asset(assetName),
-                ),
+              ),
             ],
           ),
           bgcolor: bgcolor,
