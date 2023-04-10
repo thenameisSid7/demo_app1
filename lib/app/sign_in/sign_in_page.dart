@@ -19,6 +19,26 @@ class SignInPage extends StatelessWidget {
     }
   }
 
+  Future<void> _signInWithGoogle() async {
+    try {
+      await auth.signInWithGoogle();
+      // ignore: avoid_print
+    } catch (e) {
+      // ignore: avoid_print
+      print(e.toString());
+    }
+  }
+
+  Future<void> _signInWithFacebook() async {
+    try {
+      await auth.signInWithFacebook();
+      // ignore: avoid_print
+    } catch (e) {
+      // ignore: avoid_print
+      print(e.toString());
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +74,7 @@ class SignInPage extends StatelessWidget {
             bgcolor: Colors.white,
             fgcolor: Colors.grey,
             textcolor: Colors.black87,
-            onPressed: () {},
+            onPressed: _signInWithGoogle,
             assetName: 'images/google-logo.png',
           ),
           SizedBox(
@@ -65,7 +85,7 @@ class SignInPage extends StatelessWidget {
             bgcolor: Color(0xFF334D92),
             fgcolor: Colors.grey,
             textcolor: Colors.white,
-            onPressed: () {},
+            onPressed: _signInWithFacebook,
             assetName: 'images/facebook-logo.png',
           ),
           SizedBox(
